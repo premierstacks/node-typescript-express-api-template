@@ -36,13 +36,19 @@
     "@opentelemetry/sdk-metrics": "^2.0",
     "@opentelemetry/sdk-node": "^0.200.0",
     "@opentelemetry/sdk-trace-base": "^2.0",
-    "express": "^5.1"
+    "compression": "^1.8",
+    "cookie-parser": "^1.4",
+    "express": "^5.1",
+    "multer": "^1.4.5-lts.2"
   },
   "devDependencies": {
     "@premierstacks/eslint-stack": "github:premierstacks/eslint-stack#semver:^2.0",
     "@premierstacks/prettier-stack": "github:premierstacks/prettier-stack#semver:^2.0",
     "@premierstacks/typescript-stack": "github:premierstacks/typescript-stack#semver:^2.0",
-    "@types/express": "^5.0"
+    "@types/compression": "^1.7",
+    "@types/cookie-parser": "^1.4",
+    "@types/express": "^5.0",
+    "@types/multer": "^1.4"
   },
   "type": "module",
   "scripts": {

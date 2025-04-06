@@ -1,0 +1,76 @@
+{
+  "name": "@premierstacks/node-webpack-typescript-app-template",
+  "description": "premierstacks node webpack typescript app template",
+  "keywords": [
+    "tomchochola",
+    "tomaschochola",
+    "premierstacks",
+    "node-webpack-typescript-app-template"
+  ],
+  "homepage": "https://github.com/premierstacks/node-webpack-typescript-app-template",
+  "bugs": {
+    "email": "chocholatom1997@gmail.com",
+    "url": "https://github.com/premierstacks/node-webpack-typescript-app-template/issues"
+  },
+  "license": "Apache-2.0",
+  "author": {
+    "email": "chocholatom1997@gmail.com",
+    "name": "Tomáš Chochola",
+    "url": "https://github.com/tomchochola"
+  },
+  "contributors": [
+    {
+      "email": "chocholatom1997@gmail.com",
+      "name": "Tomáš Chochola",
+      "url": "https://github.com/tomchochola"
+    }
+  ],
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/tomchochola"
+  },
+  "repository": "github:premierstacks/node-webpack-typescript-app-template",
+  "dependencies": {
+    "@opentelemetry/auto-instrumentations-node": "^0.57",
+    "@opentelemetry/sdk-logs": "^0.200",
+    "@opentelemetry/sdk-metrics": "^2.0",
+    "@opentelemetry/sdk-node": "^0.200.0",
+    "@opentelemetry/sdk-trace-base": "^2.0",
+    "express": "^5.1"
+  },
+  "devDependencies": {
+    "@premierstacks/eslint-stack": "github:premierstacks/eslint-stack#semver:^2.0",
+    "@premierstacks/prettier-stack": "github:premierstacks/prettier-stack#semver:^2.0",
+    "@premierstacks/typescript-stack": "github:premierstacks/typescript-stack#semver:^2.0",
+    "@types/express": "^5.0"
+  },
+  "type": "module",
+  "scripts": {
+    "check": "npm run lint && npm run stan && npm run dependencies",
+    "clean": "npm run clean:npm && npm run clean:dist",
+    "clean:dist": "git clean -xfd ./dist",
+    "clean:npm": "git clean -xfd ./node_modules ./package-lock.json",
+    "commit": "npm run local && npm run fix && npm run check",
+    "dependencies": "npm run npm:audit",
+    "development": "npm run npm:install && npm run tsc:build",
+    "fix": "npm run fix:eslint && npm run fix:prettier",
+    "fix:eslint": "eslint --fix .",
+    "fix:prettier": "prettier -w .",
+    "lint": "npm run lint:eslint && npm run lint:prettier",
+    "lint:eslint": "eslint .",
+    "lint:prettier": "prettier -c .",
+    "local": "npm run npm:install && npm run tsc:build",
+    "npm:audit": "npm audit --audit-level info --include prod --include dev --include peer --include optional",
+    "npm:ci": "npm ci --install-links --include prod --omit dev --include peer --include optional",
+    "npm:install": "npm install --install-links --include prod --include dev --include peer --include optional",
+    "npm:update": "npm update --install-links --include prod --include dev --include peer --include optional",
+    "production": "npm run npm:install && npm run tsc:build",
+    "staging": "npm run npm:install && npm run tsc:build",
+    "stan": "npm run stan:typescript",
+    "stan:typescript": "tsc --noEmit",
+    "start": "npm run tsc:build && node ./dist/index.js",
+    "testing": "npm run npm:install && npm run tsc:build",
+    "tsc:build": "tsc",
+    "tsc:watch": "tsc --watch"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "extends": "@premierstacks/typescript-stack/src/node_webpack_app.json",
+  "include": ["./src/**/*"],
+  "compilerOptions": {
+    "outDir": "./dist"
+  }
+}

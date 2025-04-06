@@ -1,0 +1,16 @@
+# generic
+.DS_Store
+.fleet
+.idea
+.vscode
+.zed
+
+# svg
+*.svg
+
+# node
+/node_modules
+/package-lock.json
+
+# compiled files
+/dist

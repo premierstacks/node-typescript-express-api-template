@@ -1,10 +1,10 @@
 import './observability.js';
 
+import { logs, SeverityNumber } from '@opentelemetry/api-logs';
 import compress from 'compression';
 import cookieParser from 'cookie-parser';
 import type { ErrorRequestHandler, Express, RequestHandler } from 'express';
 import express from 'express';
-import multer from 'multer';
 
 const PORT: number = parseInt(process.argv[2] ?? process.env['PORT'] ?? '8080');
 const app: Express = express();
@@ -13,7 +13,7 @@ app.disable('x-powered-by');
 
 app.use(compress());
 app.use(cookieParser());
-app.use(multer().none());
+app.use(express.urlencoded({ extended: true }));
 
 const setSecurityHeaders: RequestHandler = (_req, res, next) => {
   if (res.headersSent) {
@@ -94,6 +94,10 @@ const handleError: ErrorRequestHandler = (err, _req, res, next) => {
 
 app.use(handleError);
 
-app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Express is running on http://0.0.0.0:${PORT.toFixed()}`);
+app.listen(PORT, () => {
+  logs.getLogger('logs').emit({
+    body: `Server listening on port ${PORT.toFixed()} on all network interfaces.`,
+    severityNumber: SeverityNumber.INFO,
+    severityText: 'INFO',
+  });
 });

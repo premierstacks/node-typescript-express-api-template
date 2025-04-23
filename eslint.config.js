@@ -1,3 +1,4 @@
-import { createEslintConfigNodeTypescript, createEslintIgnorePatterns, createEslintOverridesForConfigs } from '@premierstacks/eslint-stack';
+import { createEslintConfigIgnores, createEslintConfigIgnoresRoot, createEslintConfigNodeTypescript } from '@premierstacks/eslint-stack';
+import { defineConfig, globalIgnores } from 'eslint/config';
 
-export default [...createEslintIgnorePatterns(['dist']), ...createEslintConfigNodeTypescript(), ...createEslintOverridesForConfigs()];
+export default defineConfig([globalIgnores(['dist']), createEslintConfigIgnores(), createEslintConfigIgnoresRoot(), createEslintConfigNodeTypescript()]);

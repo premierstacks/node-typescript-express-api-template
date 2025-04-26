@@ -1,6 +1,6 @@
-# [Node Webpack TypeScript App Template](https://github.com/premierstacks/node-webpack-typescript-app-template) by [Tomáš Chochola](https://github.com/tomchochola)
+# [Node TypeScript Express Api Template](https://github.com/premierstacks/node-typescript-express-api-template) by [Tomáš Chochola](https://github.com/tomchochola)
 
-The Node Webpack TypeScript App Template provides a complete starting point for developing Node.js applications using TypeScript and Webpack. With pre-configured setups for TypeScript compilation, code quality tools, and efficient build processes, this template ensures your Node.js projects are scalable, maintainable, and optimized from the start.
+The Node TypeScript Express API Template provides a robust and secure foundation for building RESTful APIs using Node.js, Express, and TypeScript. It comes pre-configured with essential middleware for enhanced security headers, compression, cookie parsing, and standardized error handling. Including basic OpenTelemetry integration for observability and integrated tooling like ESLint, Prettier, and TypeScript Stack, this template accelerates development while ensuring adherence to best practices for building scalable and maintainable backend services.
 
 ## What is Premierstacks
 

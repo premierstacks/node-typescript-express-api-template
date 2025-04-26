@@ -1,16 +1,16 @@
 {
-  "name": "@premierstacks/node-webpack-typescript-app-template",
-  "description": "premierstacks node webpack typescript app template",
+  "name": "@premierstacks/node-typescript-express-api-template",
+  "description": "premierstacks node typescript express api template",
   "keywords": [
     "tomchochola",
     "tomaschochola",
     "premierstacks",
-    "node-webpack-typescript-app-template"
+    "node-typescript-express-api-template"
   ],
-  "homepage": "https://github.com/premierstacks/node-webpack-typescript-app-template",
+  "homepage": "https://github.com/premierstacks/node-typescript-express-api-template",
   "bugs": {
     "email": "chocholatom1997@gmail.com",
-    "url": "https://github.com/premierstacks/node-webpack-typescript-app-template/issues"
+    "url": "https://github.com/premierstacks/node-typescript-express-api-template/issues"
   },
   "license": "Apache-2.0",
   "author": {
@@ -29,7 +29,7 @@
     "type": "github",
     "url": "https://github.com/sponsors/tomchochola"
   },
-  "repository": "github:premierstacks/node-webpack-typescript-app-template",
+  "repository": "github:premierstacks/node-typescript-express-api-template",
   "dependencies": {
     "@opentelemetry/api-logs": "^0.200.0",
     "@opentelemetry/auto-instrumentations-node": "^0.58.0",

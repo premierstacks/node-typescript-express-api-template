@@ -1,15 +1,21 @@
 import './observability.js';
 
 import { logs, SeverityNumber } from '@opentelemetry/api-logs';
+import { ATTR_ERROR_TYPE, ATTR_EXCEPTION_MESSAGE, ATTR_EXCEPTION_STACKTRACE, ATTR_EXCEPTION_TYPE } from '@opentelemetry/semantic-conventions';
 import compress from 'compression';
 import cookieParser from 'cookie-parser';
 import type { ErrorRequestHandler, Express, RequestHandler } from 'express';
 import express from 'express';
 
+const logger = logs.getLogger('logs');
+
 const PORT: number = parseInt(process.argv[2] ?? process.env['PORT'] ?? '8080');
 const app: Express = express();
 
 app.disable('x-powered-by');
+
+app.set('views', './views');
+app.set('view engine', 'ejs');
 
 app.use(compress());
 app.use(cookieParser());
@@ -56,6 +62,16 @@ const setCacheControl: RequestHandler = (_req, res, next) => {
 
 app.use(setCacheControl);
 
+const handleSwagger: RequestHandler = (_req, res) => {
+  res.removeHeader('Content-Security-Policy');
+
+  res.render('swagger.ejs', { url: '/static/openapi.json' });
+};
+
+app.get('/swagger', handleSwagger);
+
+app.use('/static', express.static('static'));
+
 const handleNotFound: RequestHandler = (_req, res, next) => {
   if (res.headersSent) {
     next();
@@ -76,6 +92,26 @@ const handleNotFound: RequestHandler = (_req, res, next) => {
 app.use(handleNotFound);
 
 const handleError: ErrorRequestHandler = (err, _req, res, next) => {
+  let message: string | undefined = undefined;
+
+  if (err instanceof Error) {
+    message = err.message;
+  } else if (err instanceof String || typeof err === 'string') {
+    message = err.toString();
+  }
+
+  logger.emit({
+    attributes: {
+      [ATTR_ERROR_TYPE]: '500',
+      [ATTR_EXCEPTION_TYPE]: err instanceof Error ? err.name : undefined,
+      [ATTR_EXCEPTION_MESSAGE]: message,
+      [ATTR_EXCEPTION_STACKTRACE]: err instanceof Error ? err.stack : undefined,
+    },
+    severityNumber: SeverityNumber.ERROR,
+    severityText: 'ERROR',
+    body: message,
+  });
+
   if (res.headersSent) {
     next(err);
     return;
@@ -95,7 +131,7 @@ const handleError: ErrorRequestHandler = (err, _req, res, next) => {
 app.use(handleError);
 
 app.listen(PORT, () => {
-  logs.getLogger('logs').emit({
+  logger.emit({
     body: `Server listening on port ${PORT.toFixed()} on all network interfaces.`,
     severityNumber: SeverityNumber.INFO,
     severityText: 'INFO',

@@ -62,13 +62,13 @@ const setCacheControl: RequestHandler = (_req, res, next) => {
 
 app.use(setCacheControl);
 
-const handleSwagger: RequestHandler = (_req, res) => {
+const handleOpenapi: RequestHandler = (_req, res) => {
   res.removeHeader('Content-Security-Policy');
 
-  res.render('swagger.ejs', { url: '/static/openapi.json' });
+  res.render('openapi.ejs', { url: '/static/openapi.json' });
 };
 
-app.get('/swagger', handleSwagger);
+app.get('/openapi', handleOpenapi);
 
 app.use('/static', express.static('static'));
 

@@ -14,3 +14,13 @@
 
 # compiled files
 /dist
+
+# eslint
+*.tsx
+*.mts
+*.ts
+*.cts
+*.jsx
+*.mjs
+*.js
+*.cjs

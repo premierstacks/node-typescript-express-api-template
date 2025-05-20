@@ -24,6 +24,7 @@ app.use(express.urlencoded({ extended: true }));
 const setSecurityHeaders: RequestHandler = (_req, res, next) => {
   if (res.headersSent) {
     next();
+
     return;
   }
 
@@ -32,7 +33,7 @@ const setSecurityHeaders: RequestHandler = (_req, res, next) => {
   res.setHeader('X-Content-Type-Options', 'nosniff');
   res.setHeader(
     'Content-Security-Policy',
-    "default-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; style-src 'self'; font-src 'self'; frame-ancestors 'none'; upgrade-insecure-requests; block-all-mixed-content",
+    'default-src \'self\'; form-action \'self\'; base-uri \'self\'; object-src \'none\'; style-src \'self\'; font-src \'self\'; frame-ancestors \'none\'; upgrade-insecure-requests; block-all-mixed-content',
   );
   res.setHeader('X-Permitted-Cross-Domain-Policies', 'none');
   res.setHeader('Referrer-Policy', 'no-referrer');
@@ -52,6 +53,7 @@ app.use(setSecurityHeaders);
 const setCacheControl: RequestHandler = (_req, res, next) => {
   if (res.headersSent) {
     next();
+
     return;
   }
 
@@ -75,6 +77,7 @@ app.use('/static', express.static('static'));
 const handleNotFound: RequestHandler = (_req, res, next) => {
   if (res.headersSent) {
     next();
+
     return;
   }
 
@@ -114,6 +117,7 @@ const handleError: ErrorRequestHandler = (err, _req, res, next) => {
 
   if (res.headersSent) {
     next(err);
+
     return;
   }
 

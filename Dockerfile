@@ -1,4 +1,4 @@
-FROM node:23 AS builder
+FROM node:22 AS builder
 ENV NODE_ENV=production
 WORKDIR /app
 COPY package*.json .
@@ -7,7 +7,7 @@ COPY . .
 RUN npm run production
 RUN npm run npm:ci
 
-FROM node:23
+FROM node:22
 ENV NODE_ENV=production
 WORKDIR /app
 COPY --from=builder /app/package*.json .

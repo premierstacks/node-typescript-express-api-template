@@ -42,7 +42,7 @@ His expertise spans backend systems built on PHP and Laravel, frontend interface
 
 **[GitHub Sponsors -> /sponsors/tomchochola](https://github.com/sponsors/tomchochola)**
 
-Premierstacks is now freely available under the Apache-2.0 license, offering high-quality tools, libraries, and templates to the developer community. While the ecosystem remains open and accessible, its growth, updates, and ongoing maintenance depend on individual support.
+Premierstacks is now freely available under the Creative Commons BY-ND 4.0 license, offering high-quality tools, libraries, and templates to the developer community. While the ecosystem remains open and accessible, its growth, updates, and ongoing maintenance depend on individual support.
 
 By sponsoring Tomáš Chochola on GitHub Sponsors, you directly contribute to the continued development, improvement, and long-term sustainability of Premierstacks. Every contribution supports the creation of reliable, scalable, and future-proof solutions for developers worldwide.
 
@@ -50,21 +50,19 @@ Your support makes a difference—thank you for being a part of this journey.
 
 ## License
 
-**Apache-2.0**
+**Creative Commons Attribution-NoDerivatives 4.0 International**
 
-**Copyright © 2025 Tomáš Chochola <chocholatom1997@gmail.com>**
+**Copyright © 2025, Tomáš Chochola <chocholatom1997@gmail.com>. Some rights reserved.**
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
+This license requires that reusers give credit to the creator. It allows reusers to copy and distribute the material in any medium or format in unadapted form only, even for commercial purposes.
 
-http://www.apache.org/licenses/LICENSE-2.0
+### Creative Commons License for Software?
 
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
+The Creative Commons BY-ND 4.0 license is perfectly suited to Premierstacks. It offers developers the freedom to integrate the software into their projects while preserving the original author’s vision and ensuring consistency across the ecosystem.
+
+Dynamic linking and object-oriented programming practices, such as inheritance or method overriding, are fully permitted. This enables seamless adaptation of the software in dynamic contexts without violating the license. However, static linking, forks, or modifications that alter the software’s original form are prohibited to maintain its integrity and prevent the creation of fragmented or subpar versions.
+
+By protecting the core quality and unity of Premierstacks, this license ensures that developers can confidently rely on it as a trusted, high-standard solution for their projects.
 
 ## Getting Started
 

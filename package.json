@@ -31,27 +31,27 @@
   },
   "repository": "github:premierstacks/node-typescript-express-api-template",
   "dependencies": {
-    "@opentelemetry/api-logs": "^0.201.1",
-    "@opentelemetry/auto-instrumentations-node": "^0.59.0",
-    "@opentelemetry/sdk-logs": "^0.201.1",
+    "@opentelemetry/api-logs": "^0.203.0",
+    "@opentelemetry/auto-instrumentations-node": "^0.62.0",
+    "@opentelemetry/sdk-logs": "^0.203.0",
     "@opentelemetry/sdk-metrics": "^2.0.1",
-    "@opentelemetry/sdk-node": "^0.201.1",
+    "@opentelemetry/sdk-node": "^0.203.0",
     "@opentelemetry/sdk-trace-base": "^2.0.1",
-    "@opentelemetry/semantic-conventions": "^1.33.0",
-    "compression": "^1.8.0",
+    "@opentelemetry/semantic-conventions": "^1.36.0",
+    "compression": "^1.8.1",
     "cookie-parser": "^1.4.7",
     "ejs": "^3.1.10",
     "express": "^5.1.0",
-    "multer": "^2.0.0"
+    "multer": "^2.0.2"
   },
   "devDependencies": {
     "@premierstacks/eslint-stack": "github:premierstacks/eslint-stack#main",
     "@premierstacks/prettier-stack": "github:premierstacks/prettier-stack#main",
     "@premierstacks/typescript-stack": "github:premierstacks/typescript-stack#main",
-    "@types/compression": "^1.7.5",
-    "@types/cookie-parser": "^1.4.8",
-    "@types/express": "^5.0.2",
-    "@types/multer": "^1.4.12"
+    "@types/compression": "^1.8.1",
+    "@types/cookie-parser": "^1.4.9",
+    "@types/express": "^5.0.3",
+    "@types/multer": "^2.0.0"
   },
   "type": "module",
   "scripts": {

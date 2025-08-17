@@ -70,7 +70,7 @@ const handleOpenapi: RequestHandler = (_req, res) => {
   res.render('openapi.ejs', { url: '/static/openapi.json' });
 };
 
-app.get('/openapi', handleOpenapi);
+app.get('/api/v1/spec', handleOpenapi);
 
 app.use('/static', express.static('static'));
 

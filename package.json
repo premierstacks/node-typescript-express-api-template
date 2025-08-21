@@ -4,6 +4,8 @@
   "keywords": [
     "tomchochola",
     "tomaschochola",
+    "Tomas Chochola",
+    "Tomáš Chochola",
     "premierstacks",
     "node-typescript-express-api-template"
   ],
@@ -32,7 +34,7 @@
   "repository": "github:premierstacks/node-typescript-express-api-template",
   "dependencies": {
     "@opentelemetry/api-logs": "^0.203.0",
-    "@opentelemetry/auto-instrumentations-node": "^0.62.0",
+    "@opentelemetry/auto-instrumentations-node": "^0.62.1",
     "@opentelemetry/sdk-logs": "^0.203.0",
     "@opentelemetry/sdk-metrics": "^2.0.1",
     "@opentelemetry/sdk-node": "^0.203.0",
